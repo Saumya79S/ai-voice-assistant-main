@@ -21,7 +21,6 @@ from schemas.appointment import AppointmentCreate, AppointmentOut, AppointmentUp
 
 router = APIRouter(prefix="/appointments", tags=["appointments"])
 
-
 @router.post("", response_model=AppointmentOut, status_code=201)
 def create_appointment(payload: AppointmentCreate, db: Session = Depends(get_db)):
     try:
